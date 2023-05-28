@@ -145,7 +145,7 @@ footer{
 .about {
     position: relative;
     display: flex;
-    height: 120vh;
+    height: 100vh;
     background-image: url(/github-portfolio/img/About2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -202,13 +202,14 @@ footer{
 }
 
 .projects{
-    height: 120vh;
+    height: 100vh;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     width: 100%;
     color: white;
-
+    display: flex;
+    flex-direction: column;
     padding: 30px 10px;
     transition: background .4s ease-in;
     background-color: #c394f8;
@@ -233,8 +234,7 @@ input[type=radio] {
 .cards {
     position: relative;
     width: 50%;
-    height: 50%;
-    margin-left: 40%; 
+    height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -243,6 +243,28 @@ input[type=radio] {
     background-color: #c394f8;
 }
 
+.infobox {
+    width: 30%;
+    height: 90%;
+    border: solid white 1px;
+    border-radius: 20px;
+    margin-left: 80px;
+    color: white;
+}
+
+.title{
+    margin: auto;
+    color: white;
+    text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+}
+
+.textarea {
+    margin: 30px;
+}
+
+.textarea h5{
+    margin-left: 0;
+}
 
 .img-project{
     width: 100%;
@@ -253,13 +275,12 @@ input[type=radio] {
 
 .project-container {
     width: 100%;
-    height: 100%;
+    height: 80%;
     transform-style: preserve-3d;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
 }
 
 
@@ -267,15 +288,15 @@ input[type=radio] {
     transform: translatex(-40%) scale(.8);
     opacity: .4;
     z-index: 0;
-  }
+}
   
-  #item-1:checked ~ .cards #song-2, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1 {
+#item-1:checked ~ .cards #song-2, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1 {
     transform: translatex(40%) scale(.8);
     opacity: .4;
     z-index: 0;
-  }
+}
   
-  #item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 {
+#item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 {
     transform: translatex(0) scale(1);
     opacity: 1;
     z-index: 1;
@@ -283,66 +304,27 @@ input[type=radio] {
     .img-project{
       box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
     }
+}
+
+
+@keyframes typing {
+    from {
+      width: 0;
+    }
   }
   
-
-.infobox {
-    border-radius: 8px;
-    min-width: 320px;
-    padding: 16px 10px;
-    float: left;
-    width: 40%;
-    margin-right: 10px;
-}
-
-.upper-part {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-    height: 36px;
+  h2.typing-effect {
     overflow: hidden;
-}
-
-.project-info {
-    width: calc(100% - 32px);
-    display: block;
-}
-
-.project-info .title {
-    color: #403d40;
-    font-size: 14px;
-    line-height: 24px;
-}
-
-.sub-line {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.subtitle, .time {
-    font-size: 12px;
-    line-height: 16px;
-    color: #c6c5c6;
-}
-
-.info-area {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 30px;
-    transition: transform .4s ease-in;
-}
-
-#item-2:checked ~ .infobox #scroll {
-    transform: translateY(0);
-}
-
-#item-2:checked ~ .infobox #scroll  {
-    transform: translateY(-40px);
-}
-
-#item-3:checked ~ .infobox #scroll  {
-    transform: translateY(-80px);
-}
+    border-right: .15em solid orange; /* Adjust the color and size as desired */
+    white-space: nowrap;
+    animation: typing 2s steps(40, end), blink-caret .75s step-end infinite;
+  }
+  
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange; /* Adjust the color to match the typing effect */
+    }
+  }

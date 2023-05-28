@@ -46,16 +46,16 @@
     </section>
     <!-- ABOUT ME PAGE -->
     <section class="about" id="about">
-            <div class="information" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500">
+            <div class="information" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500" data-aos-once="true">
                 <h2>About</h2>
-                <div data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1500">
+                <div data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1500" data-aos-once="true">
                 <p class="social">Chinese guy born and raised in Denmark.</p>
                 <p class="social">Currently studying IT Product Development at Aarhus University.</p>
                 <p class="social">Expecting to graduate in the year of 2025.</p>
                 <p class="social">Aside from coding, I enjoy browsing UI mockups, building PCs and 3D printing small items.</p>
                 </div>
                 <div class="timeline">
-                    <div class="container" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="2500">
+                    <div class="container" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="2500" data-aos-once="true">
                         <div class="text-box">
                           <a href="https://askov-hojskole.dk/askov-school-of-game-design/" target="_blank">
                             <h5>Game Design</h5>
@@ -64,7 +64,7 @@
                           </a>
                         </div>
                     </div>
-                    <div class="container" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="2750">
+                    <div class="container" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="2750" data-aos-once="true">
                         <div class="text-box">
                           <a href="https://bachelor.au.dk/itproduktudvikling" target="_blank">
                             <h5>Bachelor's Degree</h5>
@@ -73,7 +73,7 @@
                           </a>
                         </div>
                     </div>
-                    <div class="container" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="3000">
+                    <div class="container" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="3000" data-aos-once="true">
                         <div class="text-box">
                           <a href="https://kandidat.au.dk/itproduktudvikling" target="_blank">
                             <h5>Master's Degree</h5>
@@ -87,10 +87,19 @@
     </section>
     <!-- PROJECTS PAGE -->
     <section class="projects" id="projects">
+      <h2>Projects</h2>
         <div class="project-container">
-            <input type="radio" name="slider" id="item-1" checked>
-            <input type="radio" name="slider" id="item-2">
-            <input type="radio" name="slider" id="item-3">
+          <div class="infobox">
+            <div class="textarea">
+              <h5 id="title"></h5>
+              <p id="text"></p>
+              <button id ="readbtn" type="button">Read More</button>
+              <button id="codebtn" type="button">View Code</button>
+            </div>
+          </div>
+          <input type="radio" name="slider" id="item-1" checked>
+          <input type="radio" name="slider" id="item-2">
+          <input type="radio" name="slider" id="item-3">
           <div class="cards">
             <label class="card" for="item-1" id="song-1">
               <img class="img-project" src="img/Crowd_Control.png" width="600" height="600" alt="Crowd Control">
@@ -102,30 +111,6 @@
               <img class="img-project" src="img/fredthefrog.jpg" width="600" height="600" alt="Fred The Frog">
             </label>
           </div>
-        <div class="infobox">
-          <div class="upper-part">
-            <div class="info-area" id="scroll">
-              <label class="project-info" id="project-info-1">
-                <div class="title">Crowd Control</div>
-                <div class="sub-line">
-                  <div class="subtitle">2023 </div>
-                </div>
-              </label>
-              <label class="project-info" id="project-info-2">
-                <div class="title">EduFarm</div>
-                <div class="sub-line">
-                  <div class="subtitle">Arduino</div>
-                </div>
-              </label>
-              <label class="project-info" id="project-info-3">
-                <div class="title">Fred The Frog</div>
-                <div class="sub-line">
-                  <div class="subtitle">Unity</div>
-                </div>
-              </label>
-            </div>
-          </div>
-        </div>
         </div>
     </section>
     <script src="script.js"></script>
