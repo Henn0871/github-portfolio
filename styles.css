@@ -207,17 +207,11 @@ footer{
     margin: 0;
     padding: 0;
     width: 100%;
+    color: white;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 30px 10px;
     transition: background .4s ease-in;
     background-color: #c394f8;
-
-    &.blue {
-      background-color: #428aa6;
-    }
 
 }
 
@@ -238,10 +232,17 @@ input[type=radio] {
 
 .cards {
     position: relative;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 20px;
+    width: 50%;
+    height: 50%;
+    margin-left: 40%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 10px;
+    transition: background .4s ease-in;
+    background-color: #c394f8;
 }
+
 
 .img-project{
     width: 100%;
@@ -252,12 +253,11 @@ input[type=radio] {
 
 .project-container {
     width: 100%;
-    max-width: 800px;
-    max-height: 600px;
     height: 100%;
     transform-style: preserve-3d;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     align-items: center;
 }
@@ -286,11 +286,13 @@ input[type=radio] {
   }
   
 
-.player {
-    background-color: #fff;
+.infobox {
     border-radius: 8px;
     min-width: 320px;
     padding: 16px 10px;
+    float: left;
+    width: 40%;
+    margin-right: 10px;
 }
 
 .upper-part {
@@ -302,12 +304,12 @@ input[type=radio] {
     overflow: hidden;
 }
 
-.song-info {
+.project-info {
     width: calc(100% - 32px);
     display: block;
 }
 
-.song-info .title {
+.project-info .title {
     color: #403d40;
     font-size: 14px;
     line-height: 24px;
@@ -333,14 +335,14 @@ input[type=radio] {
     transition: transform .4s ease-in;
 }
 
-#item-2:checked ~ .player #test {
+#item-2:checked ~ .infobox #scroll {
     transform: translateY(0);
 }
 
-#item-2:checked ~ .player #test  {
+#item-2:checked ~ .infobox #scroll  {
     transform: translateY(-40px);
 }
 
-#item-3:checked ~ .player #test  {
+#item-3:checked ~ .infobox #scroll  {
     transform: translateY(-80px);
 }
