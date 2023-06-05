@@ -2,16 +2,16 @@ body {
     margin: 0;
     padding: 0;
     overflow: auto;
+    scroll-behavior: smooth;
     font-family: 'Open Sans', sans-serif;
+    height: 100%;
 }
 
-html{
-    scroll-behavior: smooth;
-}
+
 
 .hero {
     height: 100vh;
-    background-image: url(/github-portfolio/img/Katrinebjerg.jpeg);
+    background-image: url(/img/Katrinebjerg.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 1;
@@ -146,7 +146,7 @@ footer{
     position: relative;
     display: flex;
     height: 100vh;
-    background-image: url(/github-portfolio/img/About2.jpg);
+    background-image: url(/img/About2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center right;
@@ -250,6 +250,7 @@ input[type=radio] {
     border-radius: 20px;
     margin-left: 80px;
     color: white;
+    position: relative;
 }
 
 .title{
@@ -306,25 +307,93 @@ input[type=radio] {
     }
 }
 
+button#readbtn,
+button#codebtn {
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
 
-@keyframes typing {
-    from {
-      width: 0;
+.button-group {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+}
+
+/*CSS for tablets*/
+@media (max-width: 1366px) {
+    h1 {
+        font-size: 60px;
     }
-  }
   
-  h2.typing-effect {
-    overflow: hidden;
-    border-right: .15em solid orange; /* Adjust the color and size as desired */
-    white-space: nowrap;
-    animation: typing 2s steps(40, end), blink-caret .75s step-end infinite;
-  }
+    h2 {
+        font-size: 40px;
+        margin-left: 80px;
+        margin-top: 50px;
+        margin-bottom: 10px;
+    }
   
-  @keyframes blink-caret {
-    from, to {
-      border-color: transparent;
+    h4,
+    h5 {
+        font-size: 30px;
+        margin-left: 40px;
     }
-    50% {
-      border-color: orange; /* Adjust the color to match the typing effect */
+  
+    p {
+        font-size: 20px;
     }
-  }
+  
+    .timeline {
+        margin-left: 70px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .container{
+        width: 100%;
+    }
+  
+    .infobox {
+        width: 50%;
+        margin-left: 40px;
+    }
+  
+    .textarea {
+        margin: 20px;
+    }
+  
+    .project-container {
+        flex-direction: row;
+    }
+
+    .text-box h5 {
+        font-size: 25px;
+    }
+    
+      .text-box p {
+        font-size: 18px;
+    }
+
+    .project-container {
+        flex-direction: row;
+      }
+    
+    .infobox {
+        width: 35%;
+        margin-right: 0px;
+        margin-left: 70px;
+    }
+    
+    .cards {
+        width: 50%;
+        margin-right: 20px;
+    }
+}

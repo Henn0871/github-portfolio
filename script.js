@@ -16,8 +16,9 @@ var radios = document.querySelectorAll('input[name="slider"]');
 var colors = ['#c394f8', '#428aa6', '#6fa86f'];
 var titleElement = document.getElementById("title");
 var textElement = document.getElementById("text");
-titleElement.innerHTML = "Crowd Control";
-textElement.innerHTML = "CROW";
+
+const readBtn = document.getElementById("readbtn");
+const codeBtn = document.getElementById("codebtn");
 
 radios.forEach(function(radio, index) {
   radio.addEventListener('change', function() {
@@ -25,18 +26,23 @@ radios.forEach(function(radio, index) {
       background.style.backgroundColor = colors[index];
       cardBackground.style.backgroundColor = colors[index];
 
+      const buttonColors = getButtonBackgroundColor(colors[index]);
+
+      applyButtonStyle(readBtn, buttonColors);
+      applyButtonStyle(codeBtn, buttonColors);
+
       // Change the title of the project
       let text = "";
       let content = "";
       if (colors[index] === '#c394f8') {
         text = "Crowd Control";
-        content = "CROW";
+        content = "Crowd Control is a collaborative music-playing system - an interactive web app where users can connect to a music session and control the playlist by expressing their preferences through likes and dislikes. As users show appreciation for the songs you suggest, your DJ Level increases, and your influence over the playlist expands. Crowd Control is the ultimate platform to prove your exceptional taste in music.";
       } else if (colors[index] === '#428aa6') {
         text = "EduFarm";
-        content = "EDU.";
+        content = "Edufarm is an educational toy that makes learning about agriculture fun for kids. The toy features a tractor with multiple attachments, including a plough, seeder, manure spreader, and combine harvester, along with a set of colorful tiles. With these tools, children can unleash their creativity and design their own fields and landscapes. Let them explore the wonders of the agricultural cycle and cultivate their imagination with EduFarm.";
       } else if (colors[index] === '#6fa86f') {
         text = "Fred the Frog";
-        content = "FRED.";
+        content = "Fred the Frog is a local co-op game developed in Unity, drawing inspiration from the flash game, Bubble Struggle. The game was made from scratch, serving as the final project of my Game Design Course at Askov Højskole. Embark on a thrilling journey through the mysterious jungle, where you can level up your characters and unlock hidden abilities. Get ready to leap into an exciting adventure with Fred the Frog.";
       }
       
       titleElement.innerHTML = text;
@@ -45,9 +51,6 @@ radios.forEach(function(radio, index) {
     }
   });
 });
-
-const readBtn = document.getElementById("readbtn");
-const codeBtn = document.getElementById("codebtn");
 
 readBtn.addEventListener('click', function() {
   if (titleElement.innerHTML === "Crowd Control") {
@@ -74,3 +77,42 @@ codeBtn.addEventListener('click', function() {
     console.log("View Code: Fred the Frog");
   }
 });
+
+//Get background color for buttons
+function getButtonBackgroundColor(color) {
+  switch (color) {
+    case '#c394f8':
+      return {
+        background: '#9933ff',
+        hover: '#6600cc'
+      };
+    case '#428aa6':
+      return {
+        background: '#00b4e1',
+        hover: '#0087b3'
+      };
+    case '#6fa86f':
+      return {
+        background: '#388e3c',
+        hover: '#1b5e20' 
+      };
+    default:
+      return {
+        background: '#9933ff', 
+        hover: '#6600cc'
+      };
+  }
+}
+
+//Get hover colors for buttons
+function applyButtonStyle(button, colors) {
+  button.style.backgroundColor = colors.background;
+  button.addEventListener('mouseover', function() {
+    button.style.backgroundColor = colors.hover;
+  });
+  button.addEventListener('mouseout', function() {
+    button.style.backgroundColor = colors.background;
+  });
+}
+
+radios[0].dispatchEvent(new Event('change'));
