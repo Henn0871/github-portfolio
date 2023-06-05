@@ -115,4 +115,8 @@ function applyButtonStyle(button, colors) {
   });
 }
 
-radios[0].dispatchEvent(new Event('change'));
+//Set the default project page
+window.addEventListener('DOMContentLoaded', function() {
+  radios[0].checked = true;
+  radios[0].dispatchEvent(new Event('change'));
+});
