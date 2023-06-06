@@ -120,3 +120,42 @@ window.addEventListener('DOMContentLoaded', function() {
   radios[0].checked = true;
   radios[0].dispatchEvent(new Event('change'));
 });
+
+//Set the PDF paths
+const pdfPaths = [
+  "pdf/hej.pdf",
+  "pdf/EduFarm.pdf",
+  "path-to-pdf-3.pdf"
+];
+
+//Open the PDF in a new tab
+readBtn.addEventListener('click', function() {
+  const selectedIdx = getSelectedProjectIndex();
+  const pdfPath = pdfPaths[selectedIdx]; // Get the path based on the index
+  window.open(pdfPath, "_blank");
+});
+
+//Set the project URLS
+const githubUrls = [
+  "https://github.com/your-username/project-1",
+  "https://github.com/your-username/project-2",
+  "https://github.com/your-username/project-3"
+];
+
+//Open the Github URL in a new tab
+codeBtn.addEventListener('click', function() {
+  const selectedIdx = getSelectedProjectIndex(); // Get the selected index
+  const githubUrl = githubUrls[selectedIdx]; // Get the GitHub URL based on the index
+  window.open(githubUrl, "_blank");
+});
+
+// Get the selected PDF based on index
+function getSelectedProjectIndex() {
+  const radios = document.querySelectorAll('input[name="slider"]');
+  for (let i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      return i;
+    }
+  }
+  return 0; // Default to the first project if none selected
+}
