@@ -1,14 +1,3 @@
-//Play the project video on mouse hover.
-const clip = document.querySelectorAll('.clip');
-for (let i = 0;i < clip.length;i++) {
-  clip[i].addEventListener('mouseenter', function(e){
-    clip[i].play();
-  })
-  clip[i].addEventListener('mouseout', function(e){
-    clip[i].pause();
-  })
-}
-
 // Change the background color, text, and buttons when switching projects
 let background = document.querySelector('#projects');
 var cardBackground = document.querySelector('.cards');
@@ -39,7 +28,7 @@ radios.forEach(function(radio, index) {
         content = "Crowd Control is a collaborative music-playing system - an interactive web app where users can connect to a music session and control the playlist by expressing their preferences through likes and dislikes. As users show appreciation for the songs you suggest, your DJ Level increases, and your influence over the playlist expands. Crowd Control is the ultimate platform to prove your exceptional taste in music.";
       } else if (colors[index] === '#428aa6') {
         text = "EduFarm";
-        content = "Edufarm is an educational toy that makes learning about agriculture fun for kids. The toy features a tractor with multiple attachments, including a plough, seeder, manure spreader, and combine harvester, along with a set of colorful tiles. With these tools, children can unleash their creativity and design their own fields and landscapes. Let them explore the wonders of the agricultural cycle and cultivate their imagination with EduFarm.";
+        content = "EduFarm is an educational toy that makes learning about agriculture fun for kids. The toy features a tractor with multiple attachments, including a plough, seeder, manure spreader, and combine harvester, along with a set of colorful tiles. With these tools, children can unleash their creativity and design their own fields and landscapes. Explore the wonders of the agricultural cycle and cultivate the imagination with EduFarm.";
       } else if (colors[index] === '#6fa86f') {
         text = "Fred the Frog";
         content = "Fred the Frog is a local co-op game developed in Unity, drawing inspiration from the flash game, Bubble Struggle. The game was made from scratch, serving as the final project of my Game Design Course at Askov Højskole. Embark on a thrilling journey through the mysterious jungle, where you can level up your characters and unlock hidden abilities. Get ready to leap into an exciting adventure with Fred the Frog.";
@@ -123,9 +112,9 @@ window.addEventListener('DOMContentLoaded', function() {
 
 //Set the PDF paths
 const pdfPaths = [
-  "pdf/hej.pdf",
+  "pdf/CrowdControl.pdf",
   "pdf/EduFarm.pdf",
-  "path-to-pdf-3.pdf"
+  "pdf/FredTheFrog.pdf"
 ];
 
 //Open the PDF in a new tab
@@ -137,9 +126,9 @@ readBtn.addEventListener('click', function() {
 
 //Set the project URLS
 const githubUrls = [
-  "https://github.com/your-username/project-1",
-  "https://github.com/your-username/project-2",
-  "https://github.com/your-username/project-3"
+  "https://github.com/henninglin/CrowdControl",
+  "https://github.com/henninglin/EduFarm",
+  "https://github.com/henninglin/FredTheFrog"
 ];
 
 //Open the Github URL in a new tab
