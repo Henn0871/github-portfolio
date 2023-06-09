@@ -148,3 +148,9 @@ function getSelectedProjectIndex() {
   }
   return 0; // Default to the first project if none selected
 }
+
+//Scroll functionality
+function scrollToElement(elementId){
+  const element = document.getElementById(elementId);
+  element.scrollIntoView({ behavior: 'smooth' });
+}
